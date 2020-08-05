@@ -1,0 +1,26 @@
+{
+  "name": "minicom-node",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/intercom/minicom-2.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "lowdb": "^1.0.0",
+    "morgan": "^1.6.1",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "supervisor": "^0.9.1"
+  },
+  "engines": {
+    "node": ">=13.0.1",
+    "npm": ">=1.4.0"
+  },
+  "scripts": {
+    "start": "supervisor app"
+  }
+}

@@ -1,0 +1,80 @@
+#!/usr/bin/env ruby
+
+gemfile = File.read("./Gemfile")
+REQUIRED_RUBY_VERSION = gemfile[/ruby ['"]>=(.+)['"]/, 1]
+ACTUAL_RUBY_VERSION = RUBY_VERSION
+
+HOMEBREW_INSTALLATION_COMMAND = '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+RY_INSTALLATION_COMMAND = "brew update && brew install ry"
+
+RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS = {
+  "rbenv" => {
+    "install" => "rbenv install #{REQUIRED_RUBY_VERSION}",
+    "use" => "rbenv shell #{REQUIRED_RUBY_VERSION}",
+  },
+  "rvm" => {
+    "install" => "rvm install #{REQUIRED_RUBY_VERSION}",
+    "use" => "rvm #{REQUIRED_RUBY_VERSION}",
+  },
+  "ry" => {
+    "install" => "ry install #{REQUIRED_RUBY_VERSION}",
+    "use" => "eval $(ry setup); ry use #{REQUIRED_RUBY_VERSION}",
+  }
+}
+PREFERRED_RUBY_VERSION_MANAGERS = RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS.keys.reject { |key| key == "ry" }
+FALLBACK_RUBY_VERSION_MANAGER = "ry"
+
+def command_exists?(command)
+  system("command -v #{command} &> /dev/null")
+end
+
+def preferred_ruby_version_manager_available?
+  !!preferred_ruby_version_manager_to_use
+end
+
+def preferred_ruby_version_manager_to_use
+  PREFERRED_RUBY_VERSION_MANAGERS.find do |command|
+    command_exists?(command)
+  end
+end
+
+def ruby_version_manager_to_use
+  preferred_ruby_version_manager_to_use || FALLBACK_RUBY_VERSION_MANAGER
+end
+
+def homebrew_needs_to_be_installed?
+  !command_exists?("brew")
+end
+
+def ry_needs_to_be_installed?
+  !command_exists?("ry")
+end
+
+puts ""
+puts "🤖 I am The Determinator! Come with me if you want to use the right Ruby version!"
+puts "ℹ️  Minicom uses Ruby #{REQUIRED_RUBY_VERSION} or greater. Let me check what version of Ruby you have…"
+
+if REQUIRED_RUBY_VERSION <= ACTUAL_RUBY_VERSION
+  puts "✅ You’re using Ruby #{ACTUAL_RUBY_VERSION}. You’re all set!"
+  exit(0)
+else
+  puts "⚠️  You’re using Ruby #{ACTUAL_RUBY_VERSION}. No worries! I’ll help you install the right one…"
+end
+
+if preferred_ruby_version_manager_available?
+  puts "✅ You have `#{preferred_ruby_version_manager_to_use}` installed! You must be a Rubyist! 💎 ❤️"
+else
+  if homebrew_needs_to_be_installed?
+    puts "🍺 Install Homebrew with `#{HOMEBREW_INSTALLATION_COMMAND}`."
+  end
+
+  if ry_needs_to_be_installed?
+    puts "⛏  Install ry with `#{RY_INSTALLATION_COMMAND}`."
+  end
+end
+
+puts "💎 Install Ruby #{REQUIRED_RUBY_VERSION} with `#{RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS[ruby_version_manager_to_use]['install']}`"
+puts "💎 Switch to Ruby #{REQUIRED_RUBY_VERSION} with `#{RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS[ruby_version_manager_to_use]['use']}`"
+puts "🔄 Run `bin/determinator` again to double-check you’re using the right Ruby version"
+
+exit(1)

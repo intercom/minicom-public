@@ -1,0 +1,3 @@
+#!/bin/bash
+cd spring
+./gradlew bootRun
