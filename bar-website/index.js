@@ -1,7 +1,7 @@
 class Bar {
-  barEndpoint = "http://localhost:3000/bar";
-
   constructor() {
+    this.barEndpoint = "http://localhost:3000/bar";
+
     $(document).ready(() => {
       this.verify();
     });
