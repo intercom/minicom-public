@@ -1,7 +1,7 @@
 class Foo {
-  fooEndpoint = "http://localhost:3000/foo";
-
   constructor() {
+    this.fooEndpoint = "http://localhost:3000/foo";
+
     $(document).ready(() => {
       this.verify();
     });
