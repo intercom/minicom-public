@@ -16,7 +16,11 @@ anywhere you see `{your-framework}` in the instructions below, replace it with t
 Run the command that matches your framework to install it.
 
 ```
+# Mac/Linux/Windows with WSL (Windows Subsystem for Linux)
 script/{your-framework}/setup
+
+# Windows without WSL (Windows Subsystem for Linux)
+script\{your-framework}\setup
 
 (examples)
 
