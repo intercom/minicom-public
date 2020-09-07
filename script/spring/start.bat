@@ -1,0 +1,2 @@
+cd spring
+./gradlew bootRun
