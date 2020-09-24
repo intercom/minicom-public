@@ -3,7 +3,7 @@
 setlocal
 set WWW_ROOT="./foo-website"
 set LISTEN_HOST="127.0.0.1"
-set LISTEN_PORT=8009
+set LISTEN_PORT=8008
 
 echo "Serving %WWW_ROOT% on http://%LISTEN_HOST%:%LISTEN_PORT% (^C to stop)."
 
