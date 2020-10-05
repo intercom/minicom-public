@@ -48,7 +48,7 @@ This will get you the foo site running at http://127.0.0.1:8008, the bar interfa
 
 🥳 If those worked, well done! You're all set for the interview! 
 
-🤔 If not, something might be off... but don't worry, this is not part of a test! We'll be able to help you set up on the day of the interview. 
+🤔 If not, please let us know ahead of the interview. We want to make sure you have it all set up before the interview day.
 
 ## About this project
 
