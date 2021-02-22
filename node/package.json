@@ -21,6 +21,6 @@
     "npm": ">=1.4.0"
   },
   "scripts": {
-    "start": "supervisor app"
+    "start": "supervisor -RV -i ./db.json app"
   }
 }
