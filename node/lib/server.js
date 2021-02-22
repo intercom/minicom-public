@@ -24,11 +24,11 @@ class Server {
 
   setupAPIEndpoints() {
     this.app.post('/foo', (req, res) => {
-      res.json({success: true});
-    });    
+      res.json({ success: true });
+    });
     this.app.post('/bar', (req, res) => {
-      res.json({success: true});
-    });   
+      res.json({ success: true });
+    });
   }
 
   start() {
