@@ -11,7 +11,7 @@ Follow the setup instructions mentioned in the sections below and once that is a
 
 🥳 If those worked, well done! You're all set for the interview!
 
-🤔 If not, please let us know ahead of the interview. We want to make sure you have it all set up before the interview day.
+🤔 **If you can't get it working, please let us know ahead of the interview ASAP**. We want to make sure you have it all set up before the interview day.
 
 ## Installation
 
