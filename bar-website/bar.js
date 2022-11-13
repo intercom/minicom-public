@@ -2,15 +2,17 @@ class Bar {
   constructor() {
     this.barEndpoint = 'http://localhost:3000/bar';
 
-    $(document).ready(() => {
+    document.addEventListener('DOMContentLoaded', () => {
       this.verify();
     });
   }
 
   async verify() {
     try {
-      let response = await $.post(this.barEndpoint).then();
-      if (response.success === true) {
+      const response = await fetch(this.barEndpoint, { method: 'POST' });
+      const { success } = await response.json();
+
+      if (success === true) {
         alert('Yay! Everything works');
       } else {
         alert('Unexpected response');
