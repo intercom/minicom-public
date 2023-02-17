@@ -1,6 +1,6 @@
 {
   "name": "minicom-node",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "supervisor": "^0.9.1"
   },
   "engines": {
-    "node": ">=13.0.1",
+    "node": ">=16",
     "npm": ">=1.4.0"
   },
   "scripts": {
