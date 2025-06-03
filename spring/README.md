@@ -8,6 +8,10 @@ There's nothing to be done here for the interview set-up, but feel free to look 
 
 The start command runs any setup scripts you need.
 
+### Required
+- [Java 11 SDK](https://www.oracle.com/java/technologies/downloads/#java11) - please ensure to have JDK 11 properly installed in order to run the application.
+    - If you're using [asdf](https://asdf-vm.com/) to manage runtimes, simply run `asdf install java` from the root folder to get it installed.
+
 ## Starting the server
 
 From the project root run  `script/spring/start`
