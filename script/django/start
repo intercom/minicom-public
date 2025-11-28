@@ -1,5 +1,18 @@
 #!/bin/bash
 
-source ./django/bin/activate
+set -e  # Exit on any error
 
-./django/manage.py runserver 3000
+echo "Starting Django minicom app..."
+
+# Check if virtual environment exists
+if [ ! -d "django/venv" ]; then
+    echo "Error: Virtual environment not found. Please run script/django/setup first."
+    exit 1
+fi
+
+# Activate virtual environment
+source django/venv/bin/activate
+
+# Start Django development server
+echo "Starting Django development server on port 3001..."
+python django/manage.py runserver 3001

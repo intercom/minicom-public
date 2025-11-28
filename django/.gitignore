@@ -1,3 +1,16 @@
-lib/
-bin/
-include/
+# Virtual environment
+venv/
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django
+*.log
+local_settings.py
