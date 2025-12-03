@@ -16,17 +16,26 @@ From the project root run  `script/django/start`
 
 ## Database
 
-- **Database console** `./django/manage.py dbshell`
+(Run all the below from the Django folder. `minicom-public/django`. Make sure the virtual env is activated: `source venv/bin/activate`)
+
+- **Database console** `./manage.py dbshell`
+
+Within the shell:
+
 - **List tables** `.tables`
-- **Show table contents** `.dump table_name`
+- **Show table contents** `.dump <table_name>`
 
 ### Adding a column
 
-Migrations in Django rely on inferring differences between your model definitions and table schemas. They don’t work particularly well with SQLite (the default database for this project).
+Migrations in Django rely on inferring differences between your model definitions and table schemas. They don't work particularly well with SQLite (the default database for this project).
 
 We recommend you nuke and recreate your DB for schema changes:
-  `rm django/db.sqlite3 && ./django/manage.py makemigrations && ./django/manage.py migrate`
- 
-### More information
 
-[Django documentation](https://docs.djangoproject.com/en/1.8/ref/models/fields/)
+```
+source venv/bin/activate
+rm -f ./db.sqlite3
+./manage.py makemigrations
+./manage.py migrate
+```
+
+More information at the [Django documentation](https://docs.djangoproject.com/en/5.1/ref/models/fields/).
