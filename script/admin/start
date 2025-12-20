@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-WWW_ROOT="./bar-website"
+WWW_ROOT="./admin-website"
 LISTEN_HOST="127.0.0.1"
-LISTEN_PORT=8009
+LISTEN_PORT=8011
 
 echo "Serving $WWW_ROOT on http://$LISTEN_HOST:$LISTEN_PORT (^C to stop)."
 
@@ -10,5 +10,5 @@ ruby -run -e httpd $WWW_ROOT -p $LISTEN_PORT -- -c "CacheDisable on" \
 || php -S "$LISTEN_HOST:$LISTEN_PORT" -t $WWW_ROOT \
 || npx serve $WWW_ROOT -l $LISTEN_PORT \
 || cd $WWW_ROOT && python3 -m http.server $LISTEN_PORT \
-|| printf "\n=======================\nERROR: Bar Server not started\nIt appears you don't have the required dependencies to start the Bar server.\n\n1) Install the Node LTS from https://nodejs.org/\n2) Open a new terminal window\n3) Re-run this script again.\n=======================\n" >&2
+|| printf "\n=======================\nERROR: Admin Server not started\nIt appears you don't have the required dependencies to start the Admin server.\n\n1) Install the Node LTS from https://nodejs.org/\n2) Open a new terminal window\n3) Re-run this script again.\n=======================\n" >&2
 exit 1

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <link rel="stylesheet" href="customer.css" />
+  <script src="./customer.js"></script>
+
+  <script type="text/javascript">
+    new Minicom();
+  </script>
+
+  <title>Customer Website</title>
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <h2 class="navbar-brand" href="#">Customer Website</h2>
+    </div>
+  </div>
+  <form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input type="email" id="user-email" class="form-control" placeholder="Email" />
+    </div>
+    <button id="sign-in" type="submit" class="btn btn-dark mb-2">
+      Sign Up
+    </button>
+  </form>
+</div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 id="welcome">Welcome!</h1>
+    <p>
+      This is a prototype of a customer's website. Your task is to get two
+      way messaging working. You can start by signing up in the upper left
+      hand corner! From there check out the readme.
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Structure</h2>
+      <p>
+        /customer-website is the page you are looking at. <a href="http://localhost:8011">/admin-website</a> is what
+        the admin would see.
+      </p>
+      <p>
+        Your framework will have a folder with it's name and have 4 endpoints:
+      <ul>
+        <li>POST /customer_api/ping (registers a customer and returns their unread messages)</li>
+        <li>POST /customer_api/read (marks a message as read)</li>
+        <li>GET /admin_api/users (lists all users)</li>
+        <li>POST /admin_api/messages (creates a message for a user)</li>
+      </ul>
+      </p>
+      <p>Feel free to make any changes you need to the server or the front end!</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Jquery</h2>
+      <p>
+        To communicate with the Rails app from this website, you'll want to
+        use Jquery. Check out the Jquery documentation for any tips and
+        guidance you might find yourself needing along the way.
+      </p>
+      <form action="https://api.jquery.com/" target="_blank">
+        <button type="submit" class="btn btn-dark">Read me</button>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <h2>Bootstrap</h2>
+      <p>
+        This website is styled using Bootstrap. It's a lightweight way to
+        apply styles that should take some heavy lifting off your plate. For
+        any tips on how to leverage Bootstrap, take a look at the
+        documention.
+      </p>
+      <form action="https://getbootstrap.com/docs/4.1/getting-started/introduction/" target="_blank">
+        <button type="submit" class="btn btn-dark">Read me</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

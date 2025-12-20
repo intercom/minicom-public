@@ -1,9 +1,9 @@
 @echo off
 
 setlocal
-set WWW_ROOT="./bar-website"
+set WWW_ROOT="./admin-website"
 set LISTEN_HOST="127.0.0.1"
-set LISTEN_PORT=8009
+set LISTEN_PORT=8011
 
 echo "Serving %WWW_ROOT% on http://%LISTEN_HOST%:%LISTEN_PORT% (^C to stop)."
 
@@ -23,9 +23,9 @@ IF /I "%RUBY_VERSION%" NEQ "" (
 ) ELSE (
     echo.
     echo.
-    echo ERROR: Bar Server not started
+    echo ERROR: Admin Server not started
     echo.
-    echo It appears you don't have the required dependencies to start the Bar server.
+    echo It appears you don't have the required dependencies to start the Admin server.
     echo.
     echo.
     echo 1. Install the Node LTS from https://nodejs.org/
