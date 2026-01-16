@@ -9,6 +9,10 @@ HOMEBREW_INSTALLATION_COMMAND = '/usr/bin/ruby -e "$(curl -fsSL https://raw.gith
 RY_INSTALLATION_COMMAND = "brew update && brew install ry"
 
 RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS = {
+  "asdf" => {
+    "install" => "asdf install ruby #{PREFERRED_RUBY_VERSION}",
+    "use" => "asdf set ruby #{PREFERRED_RUBY_VERSION}",
+  },
   "rbenv" => {
     "install" => "rbenv install #{PREFERRED_RUBY_VERSION}",
     "use" => "rbenv shell #{PREFERRED_RUBY_VERSION}",
