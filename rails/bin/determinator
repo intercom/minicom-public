@@ -3,22 +3,23 @@
 gemfile = File.read("./Gemfile")
 REQUIRED_RUBY_VERSION = gemfile[/ruby ['"]>=(.+)['"]/, 1]
 ACTUAL_RUBY_VERSION = RUBY_VERSION
+PREFERRED_RUBY_VERSION = File.read("../.ruby-version").strip
 
 HOMEBREW_INSTALLATION_COMMAND = '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 RY_INSTALLATION_COMMAND = "brew update && brew install ry"
 
 RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS = {
   "rbenv" => {
-    "install" => "rbenv install #{REQUIRED_RUBY_VERSION}",
-    "use" => "rbenv shell #{REQUIRED_RUBY_VERSION}",
+    "install" => "rbenv install #{PREFERRED_RUBY_VERSION}",
+    "use" => "rbenv shell #{PREFERRED_RUBY_VERSION}",
   },
   "rvm" => {
-    "install" => "rvm install #{REQUIRED_RUBY_VERSION}",
-    "use" => "rvm #{REQUIRED_RUBY_VERSION}",
+    "install" => "rvm install #{PREFERRED_RUBY_VERSION}",
+    "use" => "rvm #{PREFERRED_RUBY_VERSION}",
   },
   "ry" => {
-    "install" => "ry install #{REQUIRED_RUBY_VERSION}",
-    "use" => "eval $(ry setup); ry use #{REQUIRED_RUBY_VERSION}",
+    "install" => "ry install #{PREFERRED_RUBY_VERSION}",
+    "use" => "eval $(ry setup); ry use #{PREFERRED_RUBY_VERSION}",
   }
 }
 PREFERRED_RUBY_VERSION_MANAGERS = RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS.keys.reject { |key| key == "ry" }
@@ -73,8 +74,8 @@ else
   end
 end
 
-puts "💎 Install Ruby #{REQUIRED_RUBY_VERSION} with `#{RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS[ruby_version_manager_to_use]['install']}`"
-puts "💎 Switch to Ruby #{REQUIRED_RUBY_VERSION} with `#{RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS[ruby_version_manager_to_use]['use']}`"
+puts "💎 Install Ruby #{PREFERRED_RUBY_VERSION} with `#{RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS[ruby_version_manager_to_use]['install']}`"
+puts "💎 Switch to Ruby #{PREFERRED_RUBY_VERSION} with `#{RUBY_VERSION_MANAGER_INSTALLATION_INSTRUCTIONS[ruby_version_manager_to_use]['use']}`"
 puts "🔄 Run `bin/determinator` again to double-check you’re using the right Ruby version"
 
 exit(1)
