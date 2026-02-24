@@ -1,3 +1,4 @@
 #!/bin/bash
 cd node
 npm install
+npm run db:migrate

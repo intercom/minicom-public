@@ -1,24 +1,35 @@
 # Node
 
-Welcome to the Node backend! 
-
-There's nothing to be done here for the interview set-up, but feel free to look around! 👀
+Welcome to the Node backend! The server is written in TypeScript and all code lives in `./node/src`.
 
 ## Setup
 
-From the project root run  `script/node/setup`
+From the project root run `script/node/setup`
+
+This will install dependencies and run database migrations.
 
 ## Starting the server
 
-From the project root run  `script/node/start`
+From the project root run `script/node/start`
 
-## Project structure
-
-`app.js` starts the server and all code lives in `./node/lib`
+The server listens on port 3000.
 
 ## Database
 
-This project uses lowdb as a lightweight JSON database. All the settings can be found in `node/lib/db.js`. The database will be saved into a file called `db.json`.
+This project uses SQLite with [Sequelize](https://sequelize.org/) ORM. The database file is stored at `db/development.sqlite3`.
 
-### More information
-[Lowdb GitHub ](https://github.com/typicode/lowdb)
+### Migrations
+
+Migrations live in `db/migrations/` and follow the same timestamped `up`/`down` pattern as Rails:
+
+```bash
+npm run db:migrate          # Run pending migrations
+npm run db:rollback         # Undo the last migration
+npm run db:create-migration # Generate a new migration file
+```
+
+### Models
+
+- `User` — `src/models/user.ts`
+- `Message` — `src/models/message.ts`
+- Associations defined in `src/models/index.ts`
