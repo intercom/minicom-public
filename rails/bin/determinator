@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 gemfile = File.read("./Gemfile")
-REQUIRED_RUBY_VERSION = gemfile[/ruby ['"]>=(.+)['"]/, 1]
+REQUIRED_RUBY_VERSION = gemfile[/ruby ['"]([\d\.]+)['"]/, 1]
 ACTUAL_RUBY_VERSION = RUBY_VERSION
 
 HOMEBREW_INSTALLATION_COMMAND = '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
@@ -52,9 +52,9 @@ end
 
 puts ""
 puts "🤖 I am The Determinator! Come with me if you want to use the right Ruby version!"
-puts "ℹ️  Minicom uses Ruby #{REQUIRED_RUBY_VERSION} or greater. Let me check what version of Ruby you have…"
+puts "ℹ️  Minicom uses Ruby #{REQUIRED_RUBY_VERSION}. Let me check what version of Ruby you have…"
 
-if REQUIRED_RUBY_VERSION <= ACTUAL_RUBY_VERSION
+if REQUIRED_RUBY_VERSION == ACTUAL_RUBY_VERSION
   puts "✅ You’re using Ruby #{ACTUAL_RUBY_VERSION}. You’re all set!"
   exit(0)
 else
