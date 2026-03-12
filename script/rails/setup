@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 cd rails
 ./bin/determinator
 gem install bundler
