@@ -1,4 +1,7 @@
 #!/bin/bash
 cd node
-npm install
-npm start
+command -v corepack >/dev/null 2>&1 || npm install -g corepack
+corepack enable
+corepack prepare --activate
+pnpm install
+pnpm start

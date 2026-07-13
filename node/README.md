@@ -23,9 +23,9 @@ This project uses SQLite with [Sequelize](https://sequelize.org/) ORM. The datab
 Migrations live in `db/migrations/` and follow the same timestamped `up`/`down` pattern as Rails:
 
 ```bash
-npm run db:migrate          # Run pending migrations
-npm run db:rollback         # Undo the last migration
-npm run db:create-migration # Generate a new migration file
+pnpm run db:migrate          # Run pending migrations
+pnpm run db:rollback         # Undo the last migration
+pnpm run db:create-migration # Generate a new migration file
 ```
 
 ### Models

@@ -1,3 +1,5 @@
 setlocal
 cd node
-npm install
+call corepack enable
+call corepack prepare --activate
+call pnpm install
