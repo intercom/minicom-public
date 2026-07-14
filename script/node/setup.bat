@@ -1,4 +1,4 @@
 setlocal
 cd node
-call corepack enable
 call pnpm install
+call pnpm db:migrate
