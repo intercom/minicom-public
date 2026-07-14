@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+import urls
+
 app = FastAPI()
 
 app.add_middleware(
@@ -10,8 +12,4 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
-
-@app.post('/foo')
-@app.post('/bar')
-async def verify():
-    return {'success': True}
+app.include_router(urls.router)
