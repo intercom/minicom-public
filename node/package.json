@@ -29,8 +29,5 @@
     "db:rollback": "sequelize-cli db:migrate:undo",
     "db:create-migration": "sequelize-cli migration:generate --name",
     "typecheck": "tsc --noEmit"
-  },
-  "pnpm": {
-    "overrides": {}
   }
 }
