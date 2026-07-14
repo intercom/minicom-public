@@ -1,14 +1,5 @@
-# Supply-chain hardening config for pnpm.
-# Lives here (not package.json#pnpm) so minimumReleaseAge/trustPolicy are actually read —
-# they are silently inert under package.json#pnpm. trustPolicy was enabled after the lockfile
-# existed so it gates only future resolutions, not the already-vetted captured graph.
-# sqlite3 compiles a native binding at install time (Sequelize is non-functional without it),
-# so its build script is allowed to run. Every other build script stays blocked.
 onlyBuiltDependencies:
   - sqlite3
-# esbuild's postinstall is a no-op (its platform binary ships as an optionalDependency), so we
-# intentionally do NOT allow its build script. Acknowledging it here silences pnpm's "Ignored
-# build scripts" warning without adding it to the allowlist — the script stays blocked.
 ignoredBuiltDependencies:
   - esbuild
 minimumReleaseAge: 10080
