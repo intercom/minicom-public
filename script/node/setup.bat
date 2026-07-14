@@ -1,3 +1,4 @@
 setlocal
 cd node
-npm install
+call pnpm install
+call pnpm db:migrate

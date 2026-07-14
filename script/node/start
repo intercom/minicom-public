@@ -1,4 +1,4 @@
 #!/bin/bash
 cd node
-npm install
-npm start
+pnpm install
+pnpm start

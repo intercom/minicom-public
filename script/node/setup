@@ -1,4 +1,4 @@
 #!/bin/bash
 cd node
-npm install
-npm run db:migrate
+pnpm install
+pnpm db:migrate

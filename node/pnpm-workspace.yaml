@@ -1,0 +1,7 @@
+overrides: {}
+onlyBuiltDependencies:
+  - sqlite3
+ignoredBuiltDependencies:
+  - esbuild
+minimumReleaseAge: 10080
+trustPolicy: no-downgrade

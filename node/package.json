@@ -2,6 +2,7 @@
   "name": "minicom-node",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@10.23.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/intercom/minicom-2.git"
