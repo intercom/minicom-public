@@ -1,4 +1,5 @@
 #!/bin/bash
 cd node
 pnpm install
+pnpm db:migrate
 pnpm start
