@@ -21,6 +21,7 @@ rails
 spring
 node
 django
+fastapi
 ```
 anywhere you see `{your-framework}` in the instructions below, replace it with the keyword above.
 
@@ -39,6 +40,7 @@ script/rails/setup
 script/spring/setup
 script/node/setup
 script/django/setup
+script/fastapi/setup
 ```
 
 ## Getting started
@@ -77,3 +79,4 @@ Each Server framework is in its own folder (named after the framework) and has i
 - [Spring](./spring/README.md)
 - [Django](./django/README.md)
 - [Node](./node/README.md)
+- [FastAPI](./fastapi/README.md)
