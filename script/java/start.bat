@@ -1,2 +1,2 @@
-cd spring
-./gradlew bootRun
+cd java
+call gradlew.bat run

@@ -1,2 +1,8 @@
 #!/bin/bash
-echo "No need to run any setup. Running 'script/spring/start' runs any setup scripts you need"
+if ! java -version 2>&1 | grep -q '"21\.'; then
+  echo "Error: Java 21 is required."
+  exit 1
+fi
+
+cd java
+./gradlew build

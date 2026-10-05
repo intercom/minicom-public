@@ -18,13 +18,15 @@ Follow the setup instructions mentioned in the sections below and once that is a
 Choose your preferred framework. The current choices available are:
 ```
 rails
-spring
+java
 node
 django
 ```
 anywhere you see `{your-framework}` in the instructions below, replace it with the keyword above.
 
 Run the command that matches your framework to install it.
+
+**The Java backend requires JDK 21 exactly.** Other versions (including newer ones) fail the setup check.
 
 ```
 # Mac/Linux/Windows with WSL (Windows Subsystem for Linux)
@@ -36,7 +38,7 @@ script\{your-framework}\setup
 (examples)
 
 script/rails/setup
-script/spring/setup
+script/java/setup
 script/node/setup
 script/django/setup
 ```
@@ -74,6 +76,6 @@ Your framework will have a folder with it's name and have 2 endpoints:
 Each Server framework is in its own folder (named after the framework) and has its own Readme. You can safely ignore anything in the frameworks that you are not using.
 
 - [Rails](./rails/README.md)
-- [Spring](./spring/README.md)
+- [Java](./java/README.md)
 - [Django](./django/README.md)
 - [Node](./node/README.md)
