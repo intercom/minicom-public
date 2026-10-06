@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 21
+targetCompatibility = 21
+
+application {
+    mainClass = 'com.intercom.minicom.App'
+}
+
+dependencies {
+    implementation 'io.javalin:javalin:6.4.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
+    implementation 'com.h2database:h2:2.2.224'
+    implementation 'org.slf4j:slf4j-simple:2.0.12'
+}
