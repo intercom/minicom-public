@@ -1,6 +1,29 @@
 #!/bin/bash
-if ! java -version 2>&1 | grep -q '"21\.'; then
-  echo "Error: Java 21 is required."
+# Same lookup gradlew uses, so we validate the JDK the build will run on.
+if [ -n "$JAVA_HOME" ]; then
+  JAVA_BIN="$JAVA_HOME/bin/java"
+  HINT="JAVA_HOME is set to $JAVA_HOME. Point it at a JDK 21 or newer, or unset it to use java from PATH."
+else
+  JAVA_BIN="$(command -v java)"
+  HINT="Install JDK 21 or newer, or set JAVA_HOME to one."
+fi
+
+if [ -z "$JAVA_BIN" ] || [ ! -x "$JAVA_BIN" ]; then
+  echo "Error: Java not found (looked for ${JAVA_BIN:-java on PATH})."
+  echo "$HINT"
+  exit 1
+fi
+
+VERSION="$("$JAVA_BIN" -version 2>&1 | sed -n 's/.*version "\([^"]*\)".*/\1/p' | head -n 1)"
+case "$VERSION" in
+  1.*) MAJOR="${VERSION#1.}"; MAJOR="${MAJOR%%[!0-9]*}" ;;
+  *)   MAJOR="${VERSION%%[!0-9]*}" ;;
+esac
+
+if [ -z "$MAJOR" ] || [ "$MAJOR" -lt 21 ]; then
+  echo "Error: Java 21 or newer is required."
+  echo "Checked $JAVA_BIN, found version: ${VERSION:-unknown}"
+  echo "$HINT"
   exit 1
 fi
 
