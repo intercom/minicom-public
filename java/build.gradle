@@ -7,8 +7,9 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 21
-targetCompatibility = 21
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+}
 
 application {
     mainClass = 'com.intercom.minicom.App'

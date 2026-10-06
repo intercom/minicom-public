@@ -2,7 +2,7 @@
 
 This is the Java backend for Minicom, built with [Javalin](https://javalin.io/).
 
-JDK 21 is required to run the server.
+JDK 21 or newer is required to run the server.
 
 There's nothing to be done here for the interview set-up, but feel free to look around! 👀
 
@@ -10,7 +10,7 @@ There's nothing to be done here for the interview set-up, but feel free to look 
 
 From the project root run `script/java/setup`
 
-This will verify Java 21 is installed and download all dependencies.
+This will verify JDK 21 or newer is installed and download all dependencies. It checks `JAVA_HOME` first (the same JDK Gradle uses), then `java` on your `PATH`.
 
 ## Starting the server
 

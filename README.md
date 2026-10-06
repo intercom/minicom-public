@@ -26,7 +26,7 @@ anywhere you see `{your-framework}` in the instructions below, replace it with t
 
 Run the command that matches your framework to install it.
 
-**The Java backend requires JDK 21 exactly.** Other versions (including newer ones) fail the setup check.
+**The Java backend requires JDK 21 or newer.**
 
 ```
 # Mac/Linux/Windows with WSL (Windows Subsystem for Linux)
